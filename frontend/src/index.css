@@ -1,0 +1,65 @@
+:root {
+  --paper: #f4f4f1; --ink: #17191d; --muted: #666b73; --line: #d9dad5;
+  --cobalt: #2a44ff; --photo: #dfe6ff; --music: #ffe3d3; --podcast: #dff3e4; --dance: #f3dff3;
+  --err: #b3261e; --ok: #1f7a3d;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', system-ui, sans-serif; line-height: 1.55; }
+h1, h2, h3, .logo { font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; line-height: 1.1; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px; }
+.narrow { max-width: 680px; }
+.muted { color: var(--muted); margin: 4px 0; }
+.error { color: var(--err); } .success { color: var(--ok); }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--line); background: #fff; }
+.logo { font-weight: 800; font-size: 1.4rem; }
+.nav nav { display: flex; gap: 20px; font-weight: 500; }
+.nav nav a.active { color: var(--cobalt); }
+.footer { padding: 32px 20px; text-align: center; color: var(--muted); border-top: 1px solid var(--line); }
+
+.btn { display: inline-block; background: var(--cobalt); color: #fff; border: 0; padding: 12px 22px; border-radius: 6px; font: 600 1rem 'Instrument Sans', sans-serif; cursor: pointer; }
+.btn:hover { background: #1c33d6; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+
+.hero h1 { font-size: clamp(2.8rem, 8vw, 5.8rem); font-weight: 800; margin: 24px 0 16px; letter-spacing: -0.03em; }
+.hero p { max-width: 52ch; font-size: 1.15rem; margin-bottom: 28px; }
+.strip { display: flex; gap: 4px; margin-top: 48px; }
+.strip span, .strip button { flex: 1; text-align: center; padding: 10px 0; font-size: .85rem; border: 1px solid var(--ink); background: #fff; border-radius: 3px; }
+.strip span.taken { background: var(--ink); color: #fff; }
+.strip.pick { margin: 6px 0 16px; flex-wrap: wrap; }
+.strip.pick button { min-width: 38px; cursor: pointer; font-family: inherit; }
+.strip.pick button.on { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+
+.page-title { font-size: 2.4rem; margin: 0 0 20px; }
+.grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px; }
+.tile { padding: 28px 20px; border-radius: 10px; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; font-size: 1.05rem; }
+.tile span { color: #444; font-size: .92rem; }
+.tile.photo, .thumb.photo { background: var(--photo); } .tile.music, .thumb.music { background: var(--music); }
+.tile.podcast, .thumb.podcast { background: var(--podcast); } .tile.dance, .thumb.dance { background: var(--dance); }
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { border: 1px solid var(--line); background: #fff; padding: 8px 16px; border-radius: 999px; font: 500 .95rem 'Instrument Sans', sans-serif; cursor: pointer; }
+.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.card h3 { margin: 12px 0 4px; font-size: 1.25rem; }
+.thumb { height: 170px; border-radius: 10px; display: flex; align-items: flex-end; padding: 14px; font: 700 1.1rem 'Bricolage Grotesque', sans-serif; text-transform: capitalize; }
+.thumb.big { height: 280px; margin-bottom: 20px; }
+.price { font-weight: 700; margin: 8px 0 0; } .price small, .book h2 small { font-weight: 400; color: var(--muted); font-size: .9rem; }
+
+.detail { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+.detail h1 { font-size: 2.6rem; margin: 0 0 6px; }
+.amen { padding-left: 18px; }
+.book { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px; position: sticky; top: 16px; }
+.book h2 { margin: 0; font-size: 2rem; }
+.book label, .lbl { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; font-weight: 500; }
+input, select { padding: 10px; border: 1px solid var(--line); border-radius: 6px; font: 1rem 'Instrument Sans', sans-serif; background: #fff; }
+.total { font-weight: 700; font-size: 1.15rem; margin: 0; }
+
+.row { display: flex; gap: 10px; margin-bottom: 20px; } .row input { flex: 1; }
+.booking { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-top: 12px; }
+
+@media (max-width: 800px) { .detail { grid-template-columns: 1fr; } .book { position: static; } .row { flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
